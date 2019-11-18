@@ -3,11 +3,14 @@ import React, { Component } from 'react';
 class OwnerCard extends Component {
   render() {
     return (
-      <div className="card">
-        <div className="card-content">
-          <p>Owner Name: <span className="card-ownername">John Doe</span></p>
-        </div>
-      </div>
+       <div className="card">
+       <div className="card-content">
+         <picture>
+           <img src={require('./owner.png')} alt="Owner" />
+         </picture>
+         <h3>Owner Name: <span className="card-employeename">John Doe</span></h3>
+       </div>
+     </div>
     );
   }
 }
