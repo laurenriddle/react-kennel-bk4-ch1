@@ -5,7 +5,11 @@ class EmployeeCard extends Component {
     return (
       <div className="card">
         <div className="card-content">
-          <p>Employee Name: <span className="card-employeename">Jane Doe</span></p>
+          <picture>
+            <img src={require('./employee.png')} alt="Employee" />
+          </picture>
+          <h3>Employee Name: <span className="card-employeename">Jane Doe</span></h3>
+
         </div>
       </div>
     );
