@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 import Home from './home/Home'
 //only include these once they are built - previous practice exercise
 import LocationCard from './location/LocationCard'
-import EmployeeCard from './employee/EmployeeCard'
 import OwnerCard from './owner/OwnerCard'
 import AnimalList from './animal/AnimalList'
+import EmployeeList from './employee/EmployeeList'
 
 
 class ApplicationViews extends Component {
@@ -21,7 +21,7 @@ class ApplicationViews extends Component {
 
         }} />
         <Route path="/employee" render={(props) => {
-          return <EmployeeCard />
+          return <EmployeeList />
           
         }} />
         <Route path="/location" render={(props) => {
