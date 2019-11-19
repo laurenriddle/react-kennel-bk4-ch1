@@ -10,7 +10,6 @@ class EmployeeList extends Component {
   }
 
   componentDidMount() {
-    console.log("EMPLOYEE LIST: ComponentDidMount");
     //getAll from AnimalManager and hang on to that data; put it in state
     EmployeeManager.getAll()
       .then((employees) => {
@@ -21,7 +20,6 @@ class EmployeeList extends Component {
   }
 
   render() {
-    console.log("AnimalList: Render");
 
     return (
       <div className="container-cards">
