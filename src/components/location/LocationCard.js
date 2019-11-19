@@ -6,7 +6,7 @@ class LocationCard extends Component {
       <div className="card">
       <div className="card-content">
         <picture>
-          <img src={require('./nashville.jpg')} alt="Nashville" />
+          <img src={require('./nashville.jpg')} alt="Location" />
         </picture>
         <h3>Location: <span className="card-employeename">Nashville</span></h3>
       </div>
