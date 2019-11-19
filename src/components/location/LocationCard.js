@@ -8,7 +8,7 @@ class LocationCard extends Component {
         <picture>
           <img src={require('./nashville.jpg')} alt="Location" />
         </picture>
-        <h3>Location: <span className="card-employeename">Nashville</span></h3>
+        <h3>Location: <span className="card-locationname">Nashville</span></h3>
       </div>
     </div>
     );

@@ -15,5 +15,47 @@
             "name": "Esme",
             "breed": "Pitbull"
         }
+    ],
+    "employees": [
+        {
+            "id": 1,
+            "name": "John Doe"
+        },
+        {
+            "id": 1,
+            "name": "James Doe"
+        },
+        {
+            "id": 1,
+            "name": "Jack Doe"
+        }
+    ],
+    "owners": [
+        {
+            "id": 1,
+            "name": "John Doe"
+        },
+        {
+            "id": 1,
+            "name": "James Doe"
+        },
+        {
+            "id": 1,
+            "name": "Jack Doe"
+        }
+    ],
+    "locations": [
+        {
+            "id": 1,
+            "name": "Nashville"
+        },
+        {
+            "id": 1,
+            "name": "White House"
+        },
+        {
+            "id": 1,
+            "name": "Hendersonville"
+        }
     ]
 }
