@@ -45,3 +45,8 @@
   .card button:hover {
     background-color: darkblue;
   }
+
+  .card img {
+    text-align: left;
+    width: 30%;
+  }

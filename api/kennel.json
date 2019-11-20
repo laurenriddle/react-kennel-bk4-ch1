@@ -1,61 +1,61 @@
 {
-    "animals": [
-        {
-            "id": 1,
-            "name": "Doodles",
-            "breed": "Poodle"
-        },
-        {
-            "id": 2,
-            "name": "Decker",
-            "breed": "German Sheperd"
-        },
-        {
-            "id": 3,
-            "name": "Esme",
-            "breed": "Pitbull"
-        }
-    ],
-    "employees": [
-        {
-            "id": 1,
-            "name": "John Doe"
-        },
-        {
-            "id": 2,
-            "name": "James Doe"
-        },
-        {
-            "id": 3,
-            "name": "Jack Doe"
-        }
-    ],
-    "owners": [
-        {
-            "id": 1,
-            "name": "John Doe"
-        },
-        {
-            "id": 2,
-            "name": "James Doe"
-        },
-        {
-            "id": 3,
-            "name": "Jack Doe"
-        }
-    ],
-    "locations": [
-        {
-            "id": 1,
-            "name": "Nashville"
-        },
-        {
-            "id": 2,
-            "name": "White House"
-        },
-        {
-            "id": 3,
-            "name": "Hendersonville"
-        }
-    ]
+  "animals": [
+    {
+      "id": 1,
+      "name": "Doodles",
+      "breed": "Poodle"
+    },
+    {
+      "id": 2,
+      "name": "Decker",
+      "breed": "German Sheperd"
+    },
+    {
+      "id": 3,
+      "name": "Esme",
+      "breed": "Pitbull"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "John Doe"
+    },
+    {
+      "id": 2,
+      "name": "James Doe"
+    },
+    {
+      "id": 3,
+      "name": "James Doe"
+    }
+  ],
+  "owners": [
+    {
+      "id": 1,
+      "name": "John Doe"
+    },
+    {
+      "id": 2,
+      "name": "James Doe"
+    },
+    {
+      "id": 3,
+      "name": "Jack Doe"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Nashville"
+    },
+    {
+      "id": 2,
+      "name": "Hendersonville"
+    },
+    {
+      "id": 3,
+      "name": "White House"
+    }
+  ]
 }

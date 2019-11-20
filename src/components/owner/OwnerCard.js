@@ -9,8 +9,9 @@ class OwnerCard extends Component {
          <picture>
            <img src={require('./owner.jpg')} alt="Owner" />
          </picture>
-         <h3>Owner Name: <span className="card-ownername">{this.props.owner.name}</span></h3>
-       </div>
+         <h2>Owner Name: <span className="card-ownername">{this.props.owner.name}</span></h2>
+         <button type="button" onClick={() => this.props.deleteOwner(this.props.owner.id)}>Remove</button>
+      </div>
      </div>
     );
   }
