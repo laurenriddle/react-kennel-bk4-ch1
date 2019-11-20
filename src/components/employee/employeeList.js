@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import EmployeeManager from '../../modules/EmployeeManager';
 import EmployeeCard from './EmployeeCard'
+import APIManager from '../../modules/APIManager';
 //import the components we will need
 
 class EmployeeList extends Component {
@@ -11,7 +11,7 @@ class EmployeeList extends Component {
 
   componentDidMount() {
     //getAll from AnimalManager and hang on to that data; put it in state
-    EmployeeManager.getAll()
+    APIManager.getAll("employees")
       .then((employees) => {
         this.setState({
           employees: employees
@@ -20,9 +20,9 @@ class EmployeeList extends Component {
   }
 
   deleteEmployee = id => {
-    EmployeeManager.delete(id)
+    APIManager.delete(id, "employees")
     .then(() => {
-      EmployeeManager.getAll()
+      APIManager.getAll("employees")
       .then((newEmployees) => {
         this.setState({
             employees: newEmployees
