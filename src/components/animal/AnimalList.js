@@ -10,7 +10,6 @@ class AnimalList extends Component {
   }
 
   componentDidMount() {
-    console.log("ANIMAL LIST: ComponentDidMount");
     //getAll from AnimalManager and hang on to that data; put it in state
     APIManager.getAll("animals")
       .then((animals) => {
@@ -33,7 +32,6 @@ class AnimalList extends Component {
   }
 
   render(){
-    console.log("AnimalList: Render");
   
     return(
       <div className="container-cards">
