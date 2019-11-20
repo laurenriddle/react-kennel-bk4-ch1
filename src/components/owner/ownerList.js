@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import OwnerManager from '../../modules/OwnerManager';
 import OwnerCard from './OwnerCard';
+import APIManager from '../../modules/APIManager';
 
 
 //import the components we will need
@@ -13,7 +13,7 @@ class OwnerList extends Component {
 
   componentDidMount() {
     //getAll from AnimalManager and hang on to that data; put it in state
-    OwnerManager.getAll()
+    APIManager.getAll("owners")
       .then((owners) => {
         this.setState({
           owners: owners
@@ -22,9 +22,9 @@ class OwnerList extends Component {
   }
 
   deleteOwner = id => {
-    OwnerManager.delete(id)
+    APIManager.delete(id, "owners")
     .then(() => {
-      OwnerManager.getAll()
+      APIManager.getAll("owners")
       .then((newOwners) => {
         this.setState({
             owners: newOwners
