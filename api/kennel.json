@@ -56,5 +56,23 @@
       "id": 3,
       "name": "White House"
     }
+  ],
+  "animalOwners": [
+    {
+      "id": 1,
+      "animalId": 1,
+      "ownerId": 1
+    },
+    {
+      "id": 1,
+      "animalId": 2,
+      "ownerId": 2
+    },
+    {
+      "id": 1,
+      "animalId": 3,
+      "ownerId": 3
+    }
+
   ]
 }

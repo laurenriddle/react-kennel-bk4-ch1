@@ -10,13 +10,14 @@ class AnimalList extends Component {
     }
 
   componentDidMount() {
-    //getAll from APIManager and hang on to that data; put it in state
+    // getAll from APIManager and hang on to that data; put it in state
     APIManager.getAllWithExpand("animals", "employee")
       .then((animals) => {
         this.setState({
           animals: animals,
         })
       })
+
   }
 
   deleteAnimal = id => {
@@ -36,6 +37,7 @@ class AnimalList extends Component {
     return(
       <div className="container-cards">
         {this.state.animals.map(animal =>
+        // console.log(animal)
           <AnimalCard
             key={animal.id}
             animal={animal}

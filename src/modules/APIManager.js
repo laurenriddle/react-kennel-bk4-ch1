@@ -13,8 +13,8 @@ export default {
     })
     .then(result => result.json())
   },
-  getAllWithExpand(endpoint, expand) {
-    return fetch(`${remoteURL}/${endpoint}?_expand=${expand}`).then(result => result.json())
+  getAllWithExpand(endpoint, expand1, expand2) {
+    return fetch(`${remoteURL}/${endpoint}?_expand=${expand1}&_expand=${expand2}`).then(result => result.json())
 
   }
 } 
