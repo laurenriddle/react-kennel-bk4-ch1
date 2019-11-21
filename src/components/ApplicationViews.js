@@ -8,6 +8,7 @@ import LocationList from './location/LocationList'
 import OwnerList from './owner/OwnerList'
 import AnimalDetail from './animal/AnimalDetail'
 import LocationDetail from './location/LocationDetail'
+import AnimalForm from './animal/AnimalForm'
 
 
 class ApplicationViews extends Component {
@@ -19,13 +20,13 @@ class ApplicationViews extends Component {
           return <Home />
         }} />
         <Route exact path="/animals" render={(props) => {
-          return <AnimalList />
+          return <AnimalList {...props}/>
         }} />
         <Route path="/animals/:animalId(\d+)" render={(props) => {
           // Pass the animalId to the AnimalDetailComponent
           console.log("props from react-router-dom", props)
           console.log("props from this component", this.props)
-          return <AnimalDetail animalId={parseInt(props.match.params.animalId)} {...props}/>
+          return <AnimalDetail animalId={parseInt(props.match.params.animalId)} {...props} />
         }} />
         <Route path="/employee" render={(props) => {
           return <EmployeeList />
@@ -41,8 +42,11 @@ class ApplicationViews extends Component {
         }} />
         <Route path="/owner" render={(props) => {
           return <OwnerList />
-
         }} />
+        <Route path="/animals/new" render={(props) => {
+          return <AnimalForm {...props} />
+        }} />
+
       </React.Fragment>
     )
   }
