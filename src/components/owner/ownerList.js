@@ -36,6 +36,15 @@ class OwnerList extends Component {
   render(){
   
     return(
+      <>
+        {/*add this button above your display of animal cards*/}
+        <section className="section-content">
+          <button type="button"
+            className="btn"
+            onClick={() => { this.props.history.push("/owners/new") }}>
+            Add Owner
+       </button>
+        </section>
       <div className="container-cards">
         {this.state.owners.map(owner =>
           <OwnerCard
@@ -45,6 +54,7 @@ class OwnerList extends Component {
           />
         )}
       </div>
+      </>
     )
   }
 }
