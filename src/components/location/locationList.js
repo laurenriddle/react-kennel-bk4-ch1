@@ -23,28 +23,38 @@ class LocationList extends Component {
 
   deleteLocation = id => {
     APIManager.delete(id, "locations")
-    .then(() => {
-      APIManager.getAll("locations")
-      .then((newLocations) => {
-        this.setState({
-            locations: newLocations
-        })
+      .then(() => {
+        APIManager.getAll("locations")
+          .then((newLocations) => {
+            this.setState({
+              locations: newLocations
+            })
+          })
       })
-    })
   }
 
-  render(){
-  
-    return(
-      <div className="container-cards">
-        {this.state.locations.map(location =>
-          <LocationCard
-            key={location.id}
-            location={location}
-            deleteLocation={this.deleteLocation}
-          />
-        )}
-      </div>
+  render() {
+
+    return (
+      <>
+        {/*add this button above your display of animal cards*/}
+        <section className="section-content">
+          <button type="button"
+            className="btn"
+            onClick={() => { this.props.history.push("/locations/new") }}>
+            Add Location
+       </button>
+        </section>
+        <div className="container-cards">
+          {this.state.locations.map(location =>
+            <LocationCard
+              key={location.id}
+              location={location}
+              deleteLocation={this.deleteLocation}
+            />
+          )}
+        </div>
+      </>
     )
   }
 }
