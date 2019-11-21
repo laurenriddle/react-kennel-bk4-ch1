@@ -6,15 +6,15 @@ import APIManager from '../../modules/APIManager';
 class AnimalList extends Component {
   //define what this component needs to render
   state = {
-    animals: [],
-  }
+    animals: []
+    }
 
   componentDidMount() {
-    //getAll from AnimalManager and hang on to that data; put it in state
-    APIManager.getAll("animals")
+    //getAll from APIManager and hang on to that data; put it in state
+    APIManager.getAllWithExpand("animals", "employee")
       .then((animals) => {
         this.setState({
-          animals: animals
+          animals: animals,
         })
       })
   }

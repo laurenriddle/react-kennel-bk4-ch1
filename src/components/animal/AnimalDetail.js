@@ -7,17 +7,19 @@ class AnimalDetail extends Component {
   state = {
     name: "",
     breed: "",
+    employee: "",
     loadingStatus: true,
   }
 
   componentDidMount() {
     console.log("AnimalDetail: ComponentDidMount");
     //get(id) from AnimalManager and hang on to that data; put it into state
-    APIManager.get(this.props.animalId, "animals")
+    APIManager.get(this.props.animalId, "animals", "employee")
       .then((animal) => {
         this.setState({
           name: animal.name,
           breed: animal.breed,
+          employee: animal.employee.name,
           loadingStatus: false
         });
       });
@@ -39,6 +41,7 @@ class AnimalDetail extends Component {
           </picture>
           <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
           <p>Breed: {this.state.breed}</p>
+          <p>Employee: {this.state.employee}</p>
           <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Discharge</button>
         </div>
       </div>
