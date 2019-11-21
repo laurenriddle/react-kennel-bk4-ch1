@@ -7,7 +7,7 @@ class AnimalList extends Component {
   //define what this component needs to render
   state = {
     animals: []
-    }
+  }
 
   componentDidMount() {
     //getAll from APIManager and hang on to that data; put it in state
@@ -21,19 +21,28 @@ class AnimalList extends Component {
 
   deleteAnimal = id => {
     APIManager.delete(id, "animals")
-    .then(() => {
-      APIManager.getAll("animals")
-      .then((newAnimals) => {
-        this.setState({
-            animals: newAnimals
-        })
+      .then(() => {
+        APIManager.getAllWithExpand("animals", "employee")
+          .then((newAnimals) => {
+            this.setState({
+              animals: newAnimals
+            })
+          })
       })
-    })
   }
 
-  render(){
-  
-    return(
+  render() {
+
+    return (
+      <>
+      {/*add this button above your display of animal cards*/}
+      <section className="section-content">
+        <button type="button"
+          className="btn"
+          onClick={() => { this.props.history.push("/animals/new") }}>
+          Admit Animal
+       </button>
+      </section>
       <div className="container-cards">
         {this.state.animals.map(animal =>
           <AnimalCard
@@ -43,6 +52,7 @@ class AnimalList extends Component {
           />
         )}
       </div>
+      </>
     )
   }
 }

@@ -16,5 +16,14 @@ export default {
   getAllWithExpand(endpoint, expand) {
     return fetch(`${remoteURL}/${endpoint}?_expand=${expand}`).then(result => result.json())
 
-  }
+  },
+  post(endpoint, newAnimal) {
+    return fetch(`${remoteURL}/${endpoint}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newAnimal)
+    }).then(data => data.json())
+}
 } 
