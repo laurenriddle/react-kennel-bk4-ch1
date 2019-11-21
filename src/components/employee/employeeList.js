@@ -34,6 +34,15 @@ class EmployeeList extends Component {
   render(){
   
     return(
+      <>
+      {/*add this button above your display of animal cards*/}
+      <section className="section-content">
+        <button type="button"
+          className="btn"
+          onClick={() => { this.props.history.push("/employees/new") }}>
+          Add Employee
+       </button>
+      </section>
       <div className="container-cards">
         {this.state.employees.map(employee =>
           <EmployeeCard
@@ -43,6 +52,7 @@ class EmployeeList extends Component {
           />
         )}
       </div>
+      </>
     )
   }
 }
