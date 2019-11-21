@@ -6,13 +6,13 @@
       "breed": "Poodle"
     },
     {
-      "id": 2,
-      "name": "Decker",
-      "breed": "German Sheperd"
-    },
-    {
       "id": 3,
       "name": "Esme",
+      "breed": "Pitbull"
+    }, 
+    {
+      "id": 2,
+      "name": "Decker",
       "breed": "Pitbull"
     }
   ],
