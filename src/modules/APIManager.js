@@ -8,7 +8,7 @@ export default {
     return fetch(`${remoteURL}/${endpoint}`).then(result => result.json())
   },
   delete(id, endpoint) {
-    return fetch(`http://localhost:5002/${endpoint}/${id}`, {
+    return fetch(`${remoteURL}/${endpoint}/${id}`, {
         method: "DELETE"
     })
     .then(result => result.json())
