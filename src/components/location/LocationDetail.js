@@ -4,7 +4,8 @@ import APIManager from '../../modules/APIManager';
 class LocationDetail extends Component {
 
   state = {
-      name: ""
+      name: "",
+      loadingStatus: true,
   }
 
   componentDidMount(){
@@ -13,9 +14,17 @@ class LocationDetail extends Component {
     .then((location) => {
       this.setState({
         name: location.name,
-        breed: location.breed
+        breed: location.breed,
+        loadingStatus: false,
       });
     });
+  }
+
+  handleDelete = () => {
+    //invoke the delete function in AnimalManger and re-direct to the animal list.
+    this.setState({ loadingStatus: true })
+    APIManager.delete(this.props.locationId, "locations")
+      .then(() => this.props.history.push("/location"))
   }
 
   render() {
@@ -26,7 +35,8 @@ class LocationDetail extends Component {
             <img src={require('./location.png')} alt="Location" />
           </picture>
           <h2>Location: <span className="card-locationname">{this.state.name}</span></h2>
-        </div>
+          <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Discharge</button>
+          </div>
       </div>
     );
   }
