@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 class LocationCard extends Component {
   render() {
+    // this returns the location card and the data is passed to the location card through props from location list 
     return (
       <div className="card">
       <div className="card-content">

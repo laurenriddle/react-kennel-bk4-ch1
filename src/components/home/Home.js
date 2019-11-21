@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+// this builds the components that should be displayed on the home page
 class Home extends Component {
   render() {
     return (

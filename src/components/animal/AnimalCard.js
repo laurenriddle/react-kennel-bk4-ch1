@@ -3,7 +3,7 @@ import './animal.css'
 import { Link } from "react-router-dom";
 
 class AnimalCard extends Component {
-
+// this returns the animal card and the data is passed to the animal card through props from animal list 
   render() {
     return (
       <div className="card">

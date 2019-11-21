@@ -3,7 +3,7 @@ import './AnimalDetail.css'
 import APIManager from '../../modules/APIManager'
 
 class AnimalDetail extends Component {
-
+// initial setting of state
   state = {
     name: "",
     breed: "",
@@ -16,6 +16,7 @@ class AnimalDetail extends Component {
     //get(id) from AnimalManager and hang on to that data; put it into state
     APIManager.get(this.props.animalId, "animals", "employee")
       .then((animal) => {
+        // changes the state
         this.setState({
           name: animal.name,
           breed: animal.breed,
@@ -33,6 +34,7 @@ class AnimalDetail extends Component {
   }
 
   render() {
+    // this card is rendered when animal detail is clicked. The data is passed to this card from the state set on this page
     return (
       <div className="card">
         <div className="card-content">

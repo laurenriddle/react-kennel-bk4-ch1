@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 class EmployeeCard extends Component {
-  render() {
+// this returns the employee card and the data is passed to the employee card through props from employee list 
+render() {
     return (
       <div className="card">
         <div className="card-content">

@@ -11,7 +11,7 @@ import LocationDetail from './location/LocationDetail'
 
 
 class ApplicationViews extends Component {
-
+// the below code defines the path for the pages and tells the app what to display when the URL changes
   render() {
     return (
       <React.Fragment>

@@ -4,6 +4,7 @@ import "./owner.css"
 class OwnerCard extends Component {
   render() {
     return (
+    // this returns the owner card and the data is passed to the owner card through props from owner list 
        <div className="card">
        <div className="card-content">
          <picture>

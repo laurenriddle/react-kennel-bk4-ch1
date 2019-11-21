@@ -5,6 +5,7 @@ import APIManager from '../../modules/APIManager';
 
 class AnimalList extends Component {
   //define what this component needs to render
+  // this is the initial setting of state
   state = {
     animals: []
     }
@@ -13,6 +14,7 @@ class AnimalList extends Component {
     //getAll from APIManager and hang on to that data; put it in state
     APIManager.getAllWithExpand("animals", "employee")
       .then((animals) => {
+        // change the current state after get call
         this.setState({
           animals: animals,
         })
@@ -20,8 +22,10 @@ class AnimalList extends Component {
   }
 
   deleteAnimal = id => {
+    // invoke the delete funtion for the animal card
     APIManager.delete(id, "animals")
     .then(() => {
+      // get all animals, set the state equal to the new array of animals, and the page will automatically re-render
       APIManager.getAll("animals")
       .then((newAnimals) => {
         this.setState({
@@ -34,6 +38,7 @@ class AnimalList extends Component {
   render(){
   
     return(
+      // return the animal card and pass the state and deleteAnimal function through props to the card
       <div className="container-cards">
         {this.state.animals.map(animal =>
           <AnimalCard

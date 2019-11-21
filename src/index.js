@@ -5,6 +5,7 @@ import * as serviceWorker from './serviceWorker';
 import Kennel from './components/Kennel';
 import { BrowserRouter as Router } from "react-router-dom"
 
+// this renders the initial application view of the navbar and the home page
 ReactDOM.render(
   <Router>
     <Kennel />
