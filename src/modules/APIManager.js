@@ -1,8 +1,8 @@
 const remoteURL = "http://localhost:5002"
 
 export default {
-  get(id, endpoint) {
-    return fetch(`${remoteURL}/${endpoint}/${id}`).then(result => result.json())
+  get(id, endpoint, expand) {
+    return fetch(`${remoteURL}/${endpoint}/${id}?_expand=${expand}`).then(result => result.json())
   },
   getAll(endpoint) {
     return fetch(`${remoteURL}/${endpoint}`).then(result => result.json())
@@ -12,5 +12,9 @@ export default {
         method: "DELETE"
     })
     .then(result => result.json())
+  },
+  getAllWithExpand(endpoint, expand) {
+    return fetch(`${remoteURL}/${endpoint}?_expand=${expand}`).then(result => result.json())
+
   }
 } 
