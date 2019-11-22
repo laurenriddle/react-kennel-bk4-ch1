@@ -44,11 +44,18 @@ class ApplicationViews extends Component {
           return <AnimalDetail animalId={parseInt(props.match.params.animalId)} {...props} />
         }} />
         <Route exact path="/employee" render={(props) => {
-          return <EmployeeList {...props} />
-
+          if (this.isAuthenticated()) {
+            return <EmployeeList {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
         }} />
         <Route exact path="/location" render={(props) => {
-          return <LocationList {...props} />
+          if (this.isAuthenticated()) {
+            return <LocationList {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
 
         }} />
         <Route path="/locations/:locationId(\d+)" render={(props) => {
@@ -56,7 +63,11 @@ class ApplicationViews extends Component {
           return <LocationDetail locationId={parseInt(props.match.params.locationId)} {...props} />
         }} />
         <Route exact path="/owner" render={(props) => {
-          return <OwnerList {...props} />
+          if (this.isAuthenticated()) {
+            return <OwnerList {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
         }} />
         <Route path="/animals/new" render={(props) => {
           return <AnimalForm {...props} />
@@ -72,7 +83,7 @@ class ApplicationViews extends Component {
         }} />
         <Route path="/animals/:animalId(\d+)/edit" render={props => {
           return <AnimalEditForm {...props} />
-        }}/>
+        }} />
       </React.Fragment>
     )
   }
