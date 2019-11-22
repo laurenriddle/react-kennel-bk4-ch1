@@ -72,8 +72,7 @@ class ApplicationViews extends Component {
         }} />
         <Route path="/animals/:animalId(\d+)/edit" render={props => {
           return <AnimalEditForm {...props} />
-        }}
-        />
+        }}/>
       </React.Fragment>
     )
   }
