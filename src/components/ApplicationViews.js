@@ -16,6 +16,7 @@ import Login from './auth/Login'
 import AnimalEditForm from "./animal/AnimalEditForm"
 import EmployeeEditForm from "./employee/EmployeeEditForm"
 import LocationEditForm from "./location/LocationEditForm"
+import OwnerEditForm from "./owner/OwnerEditForm"
 
 
 
@@ -91,6 +92,9 @@ class ApplicationViews extends Component {
         }} /> 
         <Route path="/locations/:locationId(\d+)/edit" render={props => {
           return <LocationEditForm {...props} />
+        }} />
+        <Route path="/owners/:ownerId(\d+)/edit" render={props => {
+          return <OwnerEditForm {...props} />
         }} />
       </React.Fragment>
     )
