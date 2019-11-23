@@ -49,10 +49,6 @@
     {
       "id": 3,
       "name": "Jack Doe"
-    },
-    {
-      "name": "Taco",
-      "id": 4
     }
   ],
   "locations": [
@@ -65,8 +61,12 @@
       "name": "White House"
     },
     {
-      "name": "Rivergate",
-      "id": 4
+      "id": 4,
+      "name": "Rivergate"
+    },
+    {
+      "name": "Rivergate2",
+      "id": 5
     }
   ]
 }

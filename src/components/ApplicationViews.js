@@ -14,6 +14,9 @@ import LocationForm from './location/LocationForm'
 import OwnerForm from './owner/OwnerForm'
 import Login from './auth/Login'
 import AnimalEditForm from "./animal/AnimalEditForm"
+import EmployeeEditForm from "./employee/EmployeeEditForm"
+import LocationEditForm from "./location/LocationEditForm"
+import OwnerEditForm from "./owner/OwnerEditForm"
 
 
 
@@ -58,7 +61,7 @@ class ApplicationViews extends Component {
           }
 
         }} />
-        <Route path="/locations/:locationId(\d+)" render={(props) => {
+        <Route exact path="/locations/:locationId(\d+)" render={(props) => {
           // Pass the locationId to the LocationDetailComponent
           return <LocationDetail locationId={parseInt(props.match.params.locationId)} {...props} />
         }} />
@@ -72,7 +75,7 @@ class ApplicationViews extends Component {
         <Route path="/animals/new" render={(props) => {
           return <AnimalForm {...props} />
         }} />
-        <Route path="/employees/new" render={(props) => {
+        <Route exact path="/employees/new" render={(props) => {
           return <EmployeeForm {...props} />
         }} />
         <Route path="/locations/new" render={(props) => {
@@ -83,6 +86,15 @@ class ApplicationViews extends Component {
         }} />
         <Route path="/animals/:animalId(\d+)/edit" render={props => {
           return <AnimalEditForm {...props} />
+        }} />
+         <Route path="/employees/:employeeId(\d+)/edit" render={props => {
+          return <EmployeeEditForm {...props} />
+        }} /> 
+        <Route path="/locations/:locationId(\d+)/edit" render={props => {
+          return <LocationEditForm {...props} />
+        }} />
+        <Route path="/owners/:ownerId(\d+)/edit" render={props => {
+          return <OwnerEditForm {...props} />
         }} />
       </React.Fragment>
     )
