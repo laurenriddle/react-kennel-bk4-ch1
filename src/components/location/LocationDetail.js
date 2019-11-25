@@ -14,7 +14,6 @@ class LocationDetail extends Component {
     .then((location) => {
       this.setState({
         name: location.name,
-        breed: location.breed,
         loadingStatus: false,
       });
     });

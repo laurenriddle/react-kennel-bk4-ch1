@@ -20,7 +20,7 @@ class EmployeeWithAnimals extends Component {
         })
     }
 
-    deleteAnimal = id => {
+    deleteEmployee = id => {
         APIManager.delete(id, "animals")
           .then(() => {
             EmployeeManager.getWithAnimals(this.props.match.params.employeeId)
@@ -42,7 +42,7 @@ class EmployeeWithAnimals extends Component {
                 key={animal.id}
                 animal={animal}
                 {...this.props}
-                deleteAnimal={this.deleteAnimal}
+                deleteEmployee={this.deleteEmployee}
               />
             )}
           </div>

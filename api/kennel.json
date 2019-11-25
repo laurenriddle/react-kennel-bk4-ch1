@@ -7,12 +7,6 @@
       "employeeId": 3
     },
     {
-      "name": "Jack",
-      "breed": "Big cat",
-      "id": 4,
-      "employeeId": 1
-    },
-    {
       "name": "Angus",
       "breed": "Gerbil",
       "id": 5,
@@ -21,16 +15,14 @@
   ],
   "employees": [
     {
-      "id": 1,
-      "name": "John Doe"
-    },
-    {
       "id": 2,
-      "name": "James Doe"
+      "name": "James Doe",
+      "locationId": 1
     },
     {
       "id": 3,
-      "name": "Jordan Doe"
+      "name": "Jordan Doe",
+      "locationId": 3
     }
   ],
   "owners": [
@@ -59,10 +51,6 @@
     {
       "id": 4,
       "name": "Rivergate"
-    },
-    {
-      "name": "Rivergate2",
-      "id": 5
     }
   ]
 }

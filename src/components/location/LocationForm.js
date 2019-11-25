@@ -18,47 +18,47 @@ class LocationForm extends Component {
     constructNewLocation = evt => {
         evt.preventDefault();
         if (this.state.locationName === "") {
-            window.alert("Please input an employee name");
+            window.alert("Please input an location name");
         } else {
             this.setState({ loadingStatus: true });
             const location = {
                 name: this.state.locationName,
-        };
+            };
 
-        // Create the animal and redirect user to animal list
-        APIManager.post("locations", location)
-            .then(() => this.props.history.push("/location"));
+            // Create the animal and redirect user to animal list
+            APIManager.post("locations", location)
+                .then(() => this.props.history.push("/location"));
+        }
+    };
+
+    render() {
+
+        return (
+            <>
+                <form>
+                    <fieldset>
+                        <div className="formgrid">
+                            <input
+                                type="text"
+                                required
+                                onChange={this.handleFieldChange}
+                                id="locationName"
+                                placeholder="Location name"
+                            />
+                            <label htmlFor="locationName">Name</label>
+                        </div>
+                        <div className="alignRight">
+                            <button
+                                type="button"
+                                disabled={this.state.loadingStatus}
+                                onClick={this.constructNewLocation}
+                            >Submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </>
+        )
     }
-};
-
-render() {
-
-    return (
-        <>
-            <form>
-                <fieldset>
-                    <div className="formgrid">
-                        <input
-                            type="text"
-                            required
-                            onChange={this.handleFieldChange}
-                            id="locationName"
-                            placeholder="Location name"
-                        />
-                        <label htmlFor="locationName">Name</label>
-                    </div>
-                    <div className="alignRight">
-                        <button
-                            type="button"
-                            disabled={this.state.loadingStatus}
-                            onClick={this.constructNewLocation}
-                        >Submit</button>
-                    </div>
-                </fieldset>
-            </form>
-        </>
-    )
-}
 }
 
 export default LocationForm

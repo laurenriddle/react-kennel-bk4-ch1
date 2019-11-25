@@ -50,6 +50,7 @@ class EmployeeList extends Component {
             employee={employee}
             deleteEmployee={this.deleteEmployee}
             {...this.props}
+
           />
         )}
       </div>
