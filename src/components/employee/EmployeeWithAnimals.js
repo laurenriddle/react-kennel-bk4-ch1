@@ -23,10 +23,11 @@ class EmployeeWithAnimals extends Component {
     deleteAnimal = id => {
         APIManager.delete(id, "animals")
           .then(() => {
-            APIManager.getAllWithExpand("animals", "employee")
-              .then((newAnimals) => {
+            EmployeeManager.getWithAnimals(this.props.match.params.employeeId)
+              .then((APIResult) => {
                 this.setState({
-                  animals: newAnimals
+                    employee: APIResult,
+                    animals: APIResult.animals,
                 })
               })
           })
