@@ -2,23 +2,26 @@
   "animals": [
     {
       "id": 2,
-      "name": "Decker",
-      "breed": "Pitbull",
-      "employeeId": 1
+      "name": "Doodles",
+      "breed": "German Sheperd",
+      "employeeId": 3
+    },
+    {
+      "id": 5,
+      "name": "Angus",
+      "breed": "Gerbil",
+      "employeeId": 2
     }
   ],
   "employees": [
-    {
-      "id": 1,
-      "name": "John Doe"
-    },
     {
       "id": 2,
       "name": "James Doe"
     },
     {
       "id": 3,
-      "name": "Jordan Doe"
+      "name": "Jordan Doe",
+      "locationId": 3
     }
   ],
   "owners": [
@@ -47,10 +50,6 @@
     {
       "id": 4,
       "name": "Rivergate"
-    },
-    {
-      "name": "Rivergate2",
-      "id": 5
     }
   ]
 }
