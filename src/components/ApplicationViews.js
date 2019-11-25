@@ -17,6 +17,7 @@ import AnimalEditForm from "./animal/AnimalEditForm"
 import EmployeeEditForm from "./employee/EmployeeEditForm"
 import LocationEditForm from "./location/LocationEditForm"
 import OwnerEditForm from "./owner/OwnerEditForm"
+import EmployeeWithAnimals from "./employee/EmployeeWithAnimals"
 
 
 
@@ -87,14 +88,17 @@ class ApplicationViews extends Component {
         <Route path="/animals/:animalId(\d+)/edit" render={props => {
           return <AnimalEditForm {...props} />
         }} />
-         <Route path="/employees/:employeeId(\d+)/edit" render={props => {
+        <Route path="/employees/:employeeId(\d+)/edit" render={props => {
           return <EmployeeEditForm {...props} />
-        }} /> 
+        }} />
         <Route path="/locations/:locationId(\d+)/edit" render={props => {
           return <LocationEditForm {...props} />
         }} />
         <Route path="/owners/:ownerId(\d+)/edit" render={props => {
           return <OwnerEditForm {...props} />
+        }} />
+        <Route path="/employees/:employeeId(\d+)/details" render={(props) => {
+          return <EmployeeWithAnimals {...props} />
         }} />
       </React.Fragment>
     )
