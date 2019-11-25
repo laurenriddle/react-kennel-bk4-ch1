@@ -1,18 +1,6 @@
 {
   "animals": [
     {
-      "id": 1,
-      "name": "Doodles",
-      "breed": "Poodles",
-      "employeeId": 1
-    },
-    {
-      "id": 3,
-      "name": "Esme",
-      "breed": "Pitbulls",
-      "employeeId": 3
-    },
-    {
       "id": 2,
       "name": "Decker",
       "breed": "Pitbull",
@@ -31,10 +19,6 @@
     {
       "id": 3,
       "name": "Jordan Doe"
-    },
-    {
-      "name": "Taco",
-      "id": 4
     }
   ],
   "owners": [

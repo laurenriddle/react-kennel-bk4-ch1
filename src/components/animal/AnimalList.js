@@ -16,6 +16,7 @@ class AnimalList extends Component {
         this.setState({
           animals: animals,
         })
+        console.log(this.state)
       })
   }
 
