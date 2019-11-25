@@ -7,17 +7,16 @@
       "employeeId": 3
     },
     {
+      "id": 5,
       "name": "Angus",
       "breed": "Gerbil",
-      "id": 5,
       "employeeId": 2
     }
   ],
   "employees": [
     {
       "id": 2,
-      "name": "James Doe",
-      "locationId": 1
+      "name": "James Doe"
     },
     {
       "id": 3,
