@@ -16,7 +16,7 @@ class AnimalForm extends Component {
         this.setState(stateToChange);
     };
 
-    /*  Local method for validation, set loadingStatus, create animal      object, invoke the APIManager post method, and redirect to the full animal list
+    /*  Local method for validation, set loadingStatus, create animal object, invoke the APIManager post method, and redirect to the full animal list
     */
     constructNewAnimal = evt => {
         evt.preventDefault();
