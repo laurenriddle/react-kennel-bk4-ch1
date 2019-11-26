@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom"
+import { Link, withRouter} from "react-router-dom"
 import './NavBar.css'
 
 class NavBar extends Component {
+  
+  handleLogout = () => {
+    this.props.clearUser();
+    this.props.history.push('/');
+  }
 
-  render(){
+  render() {
 
     return (
       <header>
@@ -14,10 +19,19 @@ class NavBar extends Component {
         <nav>
           <ul className="container">
             <li><Link className="nav-link" to="/">Home</Link></li>
-            {(this.props.user) ? <li><Link className="nav-link" to="/animals">Animals</Link></li> : null}
             <li><Link className="nav-link" to="/location">Locations</Link></li>
-            {(this.props.user) ? <li><Link className="nav-link" to="/employee">Employees</Link></li> : null}
-            {(this.props.user) ? <li><Link className="nav-link" to="/owner">Owners</Link></li> : null }
+            {(this.props.user) ? 
+            <>
+            <li><Link className="nav-link" to="/animals">Animals</Link></li>
+            <li><Link className="nav-link" to="/employee">Employees</Link></li>
+            <li><Link className="nav-link" to="/owner">Owners</Link></li>
+            <li><span className="nav-link" onClick={this.handleLogout}>Logout</span></li>
+            </>
+            :
+            <li><Link className="nav-link" to="/login">Login</Link></li>
+            }
+
+
           </ul>
         </nav>
       </header>
@@ -25,4 +39,4 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

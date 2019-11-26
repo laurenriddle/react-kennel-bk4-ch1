@@ -53,12 +53,7 @@ class ApplicationViews extends Component {
 
         }} />
         <Route exact path="/location" render={(props) => {
-          if (this.props.user) {
             return <LocationList {...props} />
-          } else {
-            return <Redirect to="/login" />
-          }
-
         }} />
         <Route exact path="/locations/:locationId(\d+)/detail" render={(props) => {
           // Pass the locationId to the LocationDetailComponent
@@ -101,3 +96,5 @@ class ApplicationViews extends Component {
 }
 
 export default ApplicationViews
+
+
