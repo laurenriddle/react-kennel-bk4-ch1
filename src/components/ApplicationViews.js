@@ -7,7 +7,6 @@ import EmployeeList from './employee/EmployeeList'
 import LocationList from './location/LocationList'
 import OwnerList from './owner/OwnerList'
 import AnimalDetail from './animal/AnimalDetail'
-import LocationDetail from './location/LocationDetail'
 import AnimalForm from './animal/AnimalForm'
 import EmployeeForm from './employee/EmployeeForm'
 import LocationForm from './location/LocationForm'
@@ -25,18 +24,18 @@ import LocationWithEmployees from "./location/LocationWithEmployees"
 class ApplicationViews extends Component {
   // Check if credentials are in local storage
   //returns true/false
-  isAuthenticated = () => localStorage.getItem("credentials") !== null
 
   render() {
     return (
       <React.Fragment>
-        <Route path="/login" component={Login} />
-
+        <Route path="/login" render={(props) => {
+          return <Login setUser={this.props.setUser} {...props} />
+        }} />
         <Route exact path="/" render={(props) => {
           return <Home />
         }} />
         <Route exact path="/animals" render={(props) => {
-          if (this.isAuthenticated()) {
+          if (this.props.user) {
             return <AnimalList {...props} />
           } else {
             return <Redirect to="/login" />
@@ -49,14 +48,12 @@ class ApplicationViews extends Component {
           return <AnimalDetail animalId={parseInt(props.match.params.animalId)} {...props} />
         }} />
         <Route exact path="/employee" render={(props) => {
-          if (this.isAuthenticated()) {
-            return <EmployeeList {...props} />
-          } else {
-            return <Redirect to="/login" />
-          }
+
+          return <EmployeeList {...props} />
+
         }} />
         <Route exact path="/location" render={(props) => {
-          if (this.isAuthenticated()) {
+          if (this.props.user) {
             return <LocationList {...props} />
           } else {
             return <Redirect to="/login" />
@@ -68,11 +65,8 @@ class ApplicationViews extends Component {
           return <LocationWithEmployees locationId={parseInt(props.match.params.locationId)} {...props} />
         }} />
         <Route exact path="/owner" render={(props) => {
-          if (this.isAuthenticated()) {
-            return <OwnerList {...props} />
-          } else {
-            return <Redirect to="/login" />
-          }
+          return <OwnerList {...props} />
+
         }} />
         <Route path="/animals/new" render={(props) => {
           return <AnimalForm {...props} />

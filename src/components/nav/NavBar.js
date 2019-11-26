@@ -14,10 +14,10 @@ class NavBar extends Component {
         <nav>
           <ul className="container">
             <li><Link className="nav-link" to="/">Home</Link></li>
-            <li><Link className="nav-link" to="/animals">Animals</Link></li>
+            {(this.props.user) ? <li><Link className="nav-link" to="/animals">Animals</Link></li> : null}
             <li><Link className="nav-link" to="/location">Locations</Link></li>
-            <li><Link className="nav-link" to="/employee">Employees</Link></li>
-            <li><Link className="nav-link" to="/owner">Owners</Link></li>
+            {(this.props.user) ? <li><Link className="nav-link" to="/employee">Employees</Link></li> : null}
+            {(this.props.user) ? <li><Link className="nav-link" to="/owner">Owners</Link></li> : null }
           </ul>
         </nav>
       </header>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import APIManager from '../../modules/APIManager';
 import './AnimalForm.css'
 
+
 class AnimalForm extends Component {
     state = {
         animalName: "",
