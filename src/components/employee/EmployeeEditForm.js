@@ -29,11 +29,16 @@ class EmployeeEditForm extends Component {
     componentDidMount() {
       APIManager.get(this.props.match.params.employeeId, "employees")
       .then(employee => {
+        if (Object.keys(employee).length === 0) {
+          this.props.history.push("/employee")
+          window.alert('The employee you were trying to access does not exists.')
+        } else {
         //   console.log(this.props.match.params.animalId)
           this.setState({
             employeeName: employee.name,
             loadingStatus: false,
           });
+        }
       });
     }
 

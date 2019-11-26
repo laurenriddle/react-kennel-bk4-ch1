@@ -2,45 +2,48 @@ import React, { Component } from "react"
 import APIManager from "../../modules/APIManager";
 
 class OwnerEditForm extends Component {
-    //set the initial state
-    state = {
-      ownerName: "",
-      loadingStatus: true,
+  //set the initial state
+  state = {
+    ownerName: "",
+    loadingStatus: true,
+  };
+
+  handleFieldChange = evt => {
+    const stateToChange = {}
+    stateToChange[evt.target.id] = evt.target.value
+    this.setState(stateToChange)
+  }
+
+  updateExistingOwner = evt => {
+    evt.preventDefault()
+    this.setState({ loadingStatus: true });
+    const editedOwner = {
+      id: this.props.match.params.ownerId,
+      name: this.state.ownerName,
     };
 
-    handleFieldChange = evt => {
-      const stateToChange = {}
-      stateToChange[evt.target.id] = evt.target.value
-      this.setState(stateToChange)
-    }
-
-    updateExistingOwner = evt => {
-      evt.preventDefault()
-      this.setState({ loadingStatus: true });
-      const editedOwner = {
-        id: this.props.match.params.ownerId,
-        name: this.state.ownerName,
-      };
-
-      APIManager.update(editedOwner, "owners")
+    APIManager.update(editedOwner, "owners")
       .then(() => this.props.history.push("/owner"))
-    }
+  }
 
-    componentDidMount() {
-      APIManager.get(this.props.match.params.ownerId, "owners")
+  componentDidMount() {
+    APIManager.get(this.props.match.params.ownerId, "owners")
       .then(owner => {
-        //   console.log(location)
-        //   console.log(this.props.match.params.animalId)
+        if (Object.keys(owner).length === 0) {
+          this.props.history.push("/owner")
+          window.alert('The owner you were trying to access does not exists.')
+        } else {
           this.setState({
             ownerName: owner.name,
             loadingStatus: false,
           });
+        }
       });
-    }
+  }
 
-    render() {
-      return (
-        <>
+  render() {
+    return (
+      <>
         <form>
           <fieldset>
             <div className="formgrid">
@@ -63,9 +66,9 @@ class OwnerEditForm extends Component {
             </div>
           </fieldset>
         </form>
-        </>
-      );
-    }
+      </>
+    );
+  }
 }
 
 export default OwnerEditForm
