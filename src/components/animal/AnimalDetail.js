@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './AnimalDetail.css'
 import APIManager from '../../modules/APIManager'
 
+
 class AnimalDetail extends Component {
 
   state = {
