@@ -12,10 +12,15 @@ class LocationDetail extends Component {
     //get(id) from APIManager and hang on to the data; put it into state
     APIManager.get(this.props.locationId, "locations")
     .then((location) => {
+      if (Object.keys(location).length === 0) {
+        this.props.history.push("/location")
+        window.alert('The location you were trying to access does not exists.')
+      } else {
       this.setState({
         name: location.name,
         loadingStatus: false,
       });
+    }
     });
   }
 

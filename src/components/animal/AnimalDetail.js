@@ -12,19 +12,6 @@ class AnimalDetail extends Component {
     loadingStatus: true,
   }
 
-  componentDidMount() {
-    console.log("AnimalDetail: ComponentDidMount");
-    //get(id) from AnimalManager and hang on to that data; put it into state
-    APIManager.get(this.props.animalId, "animals", "employee")
-      .then((animal) => {
-        this.setState({
-          name: animal.name,
-          breed: animal.breed,
-          employee: animal.employee.name,
-          loadingStatus: false
-        });
-      });
-  }
 
   handleDelete = () => {
     //invoke the delete function in AnimalManger and re-direct to the animal list.
@@ -34,6 +21,7 @@ class AnimalDetail extends Component {
   }
 
   render() {
+
     return (
       <div className="card">
         <div className="card-content">
@@ -47,6 +35,27 @@ class AnimalDetail extends Component {
         </div>
       </div>
     );
+
+  }
+  componentDidMount() {
+    console.log("AnimalDetail: ComponentDidMount");
+    //get(id) from AnimalManager and hang on to that data; put it into state
+    APIManager.get(this.props.animalId, "animals", "employee")
+      .then((animal) => {
+        console.log("console.log(animal)", animal)
+        if (Object.keys(animal).length === 0) {
+          this.props.history.push("/animals")
+          window.alert('The animal you were trying to access does not exists.')
+        } else {
+          console.log("set state")
+          this.setState({
+            name: animal.name,
+            breed: animal.breed,
+            employee: animal.employee.name,
+            loadingStatus: false
+          });
+        }
+      });
   }
 }
 

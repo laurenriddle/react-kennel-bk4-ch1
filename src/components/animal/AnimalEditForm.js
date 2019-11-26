@@ -35,6 +35,10 @@ class AnimalEditForm extends Component {
   componentDidMount() {
     APIManager.get(this.props.match.params.animalId, "animals")
       .then(animal => {
+        if (Object.keys(animal).length === 0) {
+          this.props.history.push("/animals")
+          window.alert('The animal you were trying to access does not exists.')
+        } else {
         //   console.log(this.props.match.params.animalId)
         this.setState({
           animalName: animal.name,
@@ -42,6 +46,7 @@ class AnimalEditForm extends Component {
           loadingStatus: false,
           employeeId: animal.employeeId
         });
+      }
       });
       EmployeeManager.getAll()
       .then(employees => this.setState({employees: employees}))

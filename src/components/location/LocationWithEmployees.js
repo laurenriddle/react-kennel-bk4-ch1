@@ -12,10 +12,15 @@ class LocationWithEmployees extends Component {
         //got here now make call to get employee with animal
         LocationManager.getWithEmployees(this.props.match.params.locationId)
             .then((APIResult) => {
+                if (Object.keys(APIResult).length === 0) {
+                    this.props.history.push("/location")
+                    window.alert('The location you were trying to access does not exists.')
+                  } else {
                 this.setState({
                     locationList: APIResult,
                     employees: APIResult.employees,
                 })
+            }
             })
     }
 

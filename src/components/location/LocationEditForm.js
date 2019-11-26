@@ -29,12 +29,15 @@ class LocationEditForm extends Component {
     componentDidMount() {
       APIManager.get(this.props.match.params.locationId, "locations")
       .then(location => {
-          console.log(location)
-        //   console.log(this.props.match.params.animalId)
+        if (Object.keys(location).length === 0) {
+          this.props.history.push("/location")
+          window.alert('The location you were trying to access does not exists.')
+      } else {
           this.setState({
             locationName: location.name,
             loadingStatus: false,
           });
+        }
       });
     }
 
