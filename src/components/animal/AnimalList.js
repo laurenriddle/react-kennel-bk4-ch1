@@ -22,6 +22,7 @@ class AnimalList extends Component {
   }
 
   deleteAnimal = id => {
+    console.log(id)
     APIManager.delete(id, "animals")
       .then(() => {
         APIManager.getAllWithExpand("animals", "employee")
