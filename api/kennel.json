@@ -34,13 +34,6 @@
       "employeeId": 1,
       "img": "http://res.cloudinary.com/dkjfqmbsu/image/upload/v1575483193/ik2apy9ramilbw7rkc0b.svg",
       "id": 8
-    },
-    {
-      "name": "Test",
-      "breed": "test",
-      "employeeId": 1,
-      "img": "http://res.cloudinary.com/dkjfqmbsu/image/upload/v1575483303/ixie9ozflnhe6c2y9bud.svg",
-      "id": 9
     }
   ],
   "employees": [
