@@ -15,12 +15,12 @@ class LocationWithEmployees extends Component {
                 if (Object.keys(APIResult).length === 0) {
                     this.props.history.push("/location")
                     window.alert('The location you were trying to access does not exists.')
-                  } else {
-                this.setState({
-                    locationList: APIResult,
-                    employees: APIResult.employees,
-                })
-            }
+                } else {
+                    this.setState({
+                        locationList: APIResult,
+                        employees: APIResult.employees,
+                    })
+                }
             })
     }
 

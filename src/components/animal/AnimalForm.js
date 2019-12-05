@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import APIManager from '../../modules/APIManager';
 import './AnimalForm.css'
+import fileUploader from '../../modules/ImageUploader'
 
 let newImage = ""
 class AnimalForm extends Component {
@@ -10,39 +11,39 @@ class AnimalForm extends Component {
         img: "",
         loadingStatus: false,
     };
-    
+
     handleFieldChange = evt => {
         const stateToChange = {};
         stateToChange[evt.target.id] = evt.target.value;
         this.setState(stateToChange);
     };
-    
+
     /*  Local method for validation, set loadingStatus, create animal object, invoke the APIManager post method, and redirect to the full animal list
     */
-   openWidget() {
-    let widget = window.cloudinary.createUploadWidget({
-      cloudName: 'dkjfqmbsu',
-      uploadPreset: 'tzfrbmjg'
-    }, (error, result) => {
-      if (!error && result && result.event === "success") {
-        console.log('Done! Here is the image info: ', result.info);
-        console.log(result.info.url)
-        newImage = result.info.url
-        console.log(newImage)
-        document.querySelector(".success").innerHTML += `<p>Upload Successful</p>`
-      }
+    openWidget() {
+        let widget = window.cloudinary.createUploadWidget({
+            cloudName: 'dkjfqmbsu',
+            uploadPreset: 'tzfrbmjg'
+        }, (error, result) => {
+            if (!error && result && result.event === "success") {
+                console.log('Done! Here is the image info: ', result.info);
+                console.log(result.info.url)
+                newImage = result.info.url
+                console.log(newImage)
+                document.querySelector(".success").innerHTML += `<p>Upload Successful</p>`
+            }
+        }
+        )
+        widget.open();
+        console.log("new image", newImage)
     }
-    )
-    widget.open();
-console.log("new image", newImage)
-  }
     constructNewAnimal = evt => {
         evt.preventDefault();
         if (this.state.animalName === "" || this.state.breed === "") {
             window.alert("Please input an animal name and breed");
         } else {
             this.setState({ loadingStatus: true });
-            console.log("ni",newImage)
+            console.log("ni", newImage)
             const animal = {
                 name: this.state.animalName,
                 breed: this.state.breed,
@@ -80,20 +81,33 @@ console.log("new image", newImage)
                                 placeholder="Breed"
                             />
                             <label htmlFor="breed">Breed</label>
-                            <div className="align-left">
-                            <button type="button" id="upload_widget" className="cloudinary-button" onClick={this.openWidget}>Upload files</button>
-                            <div className="success"></div>
+                            <div id="dropbox">
+
+
+                                <div class="upload_button_holder">
+                                    <input type="file" id="fileElem" multiple accept="image/*" style="display:none" onChange={fileUploader.handleFiles(this.files)} 
+                                    />
+                                </div>
+
+                                <div class="progress-bar" id="progress-bar">
+                                    <div class="progress" id="progress"></div>
+                                </div>
+                                <div id="gallery" />
                             </div>
                         </div>
-                        <div className="alignRight">
-                            <button
-                                type="button"
-                                disabled={this.state.loadingStatus}
-                                onClick={this.constructNewAnimal}
-                            >Submit</button>
+                        <div className="align-left">
+                            <button type="button" id="upload_widget" className="cloudinary-button" onClick={this.openWidget}>Upload files</button>
+                            <div className="success"></div>
                         </div>
+                    <div className="alignRight">
+                        <button
+                            type="button"
+                            disabled={this.state.loadingStatus}
+                            onClick={this.constructNewAnimal}
+                        >Submit</button>
+                    </div>
                     </fieldset>
-                </form>
+            </form>
                      
             </>
         )
