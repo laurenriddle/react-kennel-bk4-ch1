@@ -29,6 +29,7 @@ class AnimalForm extends Component {
         console.log(result.info.url)
         newImage = result.info.url
         console.log(newImage)
+        document.querySelector(".success").innerHTML += `<p>Upload Successful</p>`
       }
     }
     )
@@ -81,6 +82,7 @@ console.log("new image", newImage)
                             <label htmlFor="breed">Breed</label>
                             <div className="align-left">
                             <button type="button" id="upload_widget" className="cloudinary-button" onClick={this.openWidget}>Upload files</button>
+                            <div className="success"></div>
                             </div>
                         </div>
                         <div className="alignRight">

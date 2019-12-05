@@ -3,23 +3,16 @@
     {
       "id": 2,
       "name": "Doodles",
-      "breed": "German Sheperd",
+      "breed": "German Shepherd",
       "employeeId": 3,
-      "img": "http://res.cloudinary.com/dkjfqmbsu/image/upload/v1575482917/lejrdjvlwmbz7ofcto0n.png"
+      "img": ""
     },
     {
       "id": 5,
       "name": "Angus",
       "breed": "Gerbil",
-      "employeeId": 2,
-      "img": "http://res.cloudinary.com/dkjfqmbsu/image/upload/v1575482917/lejrdjvlwmbz7ofcto0n.png"
-    },
-    {
-      "name": "Test",
-      "breed": "test",
       "employeeId": 1,
-      "img": "http://res.cloudinary.com/dkjfqmbsu/image/upload/v1575482917/lejrdjvlwmbz7ofcto0n.png",
-      "id": 6
+      "img": "http://res.cloudinary.com/dkjfqmbsu/image/upload/v1575510137/ifv3imbonncatk7xc08l.png"
     },
     {
       "name": "Grace",
@@ -27,20 +20,12 @@
       "employeeId": 2,
       "img": "http://res.cloudinary.com/dkjfqmbsu/image/upload/v1575482931/zrxxpw3snetl2xbzhuuw.svg",
       "id": 7
-    },
-    {
-      "name": "Test",
-      "breed": "test5",
-      "employeeId": 1,
-      "img": "http://res.cloudinary.com/dkjfqmbsu/image/upload/v1575483193/ik2apy9ramilbw7rkc0b.svg",
-      "id": 8
     }
   ],
   "employees": [
     {
       "id": 1,
-      "name": "John Doe",
-      "locationId": 3
+      "name": "John Doe"
     },
     {
       "id": 2,
